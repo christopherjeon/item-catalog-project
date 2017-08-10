@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='catalog-stylesheet.css') }}">
+</head>
+
+<body>
+<div class = 'pane'>
+<h1>Sports Jersey Catalog</h1>
+
+{%if 'username' not in session %}
+  <a href="{{url_for('showLogin') }}">Login</a>
+{% else %}
+  <a href="{{url_for('gdisconnect') }}">Logout</a>
+{% endif %}
+
+<h3> Sports In Stock: </h3>
+
+{% for sport in sports %}
+
+
+<a href = "{{url_for('showJersey', sport_id = sport.id)}}"> <p>{{sport.name}}</p></a>
+
+
+
+{% endfor %}
+
+</div>
+</body>
+
+</html>

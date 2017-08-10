@@ -1,0 +1,70 @@
+body,
+html {
+  font-family: Helvetica;
+  background-color: #d2dbd0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #363636;
+  font-family: 'Helvetica'
+}
+
+main{
+  display: flex;
+  flex-flow: column;
+}
+
+h1 {border-bottom: 2px solid #eee;}
+
+h2 { font-size: 1.2em; }
+
+p { color: #363636;}
+
+a {text-decoration: underline;; color:#363636; font-size: .75em;}
+
+.pane {
+  position: absolute;
+  border: 2px solid;
+  border-radius: 25px;
+  padding: 5px;
+  margin: 5px;
+  border-color: #999999;
+  background-color: #94dd7e;
+}
+
+.header {
+  left: 50%;
+  text-align: center;
+}
+
+.name {
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.description {
+
+}
+
+.price {
+  text-align: right;
+  width:50%;
+  float: right;
+}
+
+.editdeletepane{
+
+}
+
+.flash {
+  background: #cee5F5;
+}

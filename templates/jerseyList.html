@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='catalog-stylesheet.css') }}">
+</head>
+<body>
+	<div class = 'pane'>
+		<h1>{{ sport.name }}</h1>
+
+		{% with messages = get_flashed_messages() %}
+    	{% if messages %}
+      	<ul>
+      	{% for message in messages %}
+          	<li> <strong> {{ message }} </strong> </li>
+      	{% endfor %}
+      	</ul>
+      {% endif %}
+  	{% endwith %}
+
+  	{% if jerseys !=[] %}
+		<a href = "{{url_for('newJerseyItem', sport_id = sport.id )}}">Add New Jersey</a>
+		{% endif %}
+
+	<h2>Jerseys</h2>
+	{% for jersey in jerseys %}
+		<p>{{jersey.name}}</p>
+		<p>{{jersey.description}}</p>
+		<p>{{jersey.price}}</p>
+
+		<a href='{{url_for('editJerseyItem', sport_id = sport.id, catalog_id = jersey.id)}}' >Edit</a>
+		</br>
+		<a href='{{url_for('deleteJerseyItem', sport_id = sport.id, catalog_id = jersey.id)}}' >Delete</a>
+	{% endfor %}
+
+</div>
+
+</body>
+</html>
